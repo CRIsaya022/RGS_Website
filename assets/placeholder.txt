@@ -1,0 +1,19 @@
+This directory contains website assets including:
+
+- logo.png (RGS logo)
+- favicon.ico (website favicon)
+- hero-bg.jpg (hero section background image)
+
+Subdirectories:
+- scholars/ (scholar photos)
+- team/ (team member photos)
+- news/ (news article images)
+
+Note: Replace these placeholder references with actual images from the RGS Instagram page and other sources.
+
+Recommended image sizes:
+- Logo: 200x200px (PNG with transparent background)
+- Hero background: 1920x1080px (high quality JPEG)
+- Scholar photos: 400x400px (square format)
+- Team photos: 400x500px (portrait format)
+- News images: 800x600px (landscape format)

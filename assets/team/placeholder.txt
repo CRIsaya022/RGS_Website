@@ -1,0 +1,5 @@
+Team photos directory
+Place team member photos here:
+- founder.jpg
+- program-director.jpg
+- mentor-coordinator.jpg
