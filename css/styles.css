@@ -16,6 +16,7 @@ body {
     overflow-x: hidden;
 }
 
+
 /* ===== CSS VARIABLES ===== */
 :root {
     --primary-color: #19723a;
@@ -569,7 +570,8 @@ blockquote {
 
 .apply-timeline h3,
 .eligibility h3,
-.apply-process h3 {
+.apply-process h3,
+.application-process h3 {
     color: var(--primary-color);
     margin-bottom: 2rem;
 }
@@ -627,6 +629,44 @@ blockquote {
     font-size: 1.2rem;
 }
 
+.requirements-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.requirements-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    padding: 0;
+}
+
+.requirements-list i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.eligibility-note {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f0f9ff;
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.eligibility-note p {
+    margin: 0;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.eligibility-note strong {
+    color: var(--primary-color);
+}
+
 .process-steps {
     margin-bottom: 3rem;
 }
@@ -664,6 +704,95 @@ blockquote {
     margin-top: 1rem;
     font-style: italic;
     color: var(--text-light);
+}
+
+.curriculum-section {
+    margin-bottom: 2.5rem;
+    background-color: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.curriculum-section h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.application-info {
+    background-color: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.application-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.application-status {
+    display: grid;
+    gap: 2rem;
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.status-card.closed {
+    background-color: #fef2f2;
+    border-left: 4px solid #dc2626;
+}
+
+.status-card.upcoming {
+    background-color: #f0f9ff;
+    border-left: 4px solid var(--primary-color);
+}
+
+.status-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.status-card.closed .status-icon {
+    background-color: #dc2626;
+    color: white;
+}
+
+.status-card.upcoming .status-icon {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.status-icon i {
+    font-size: 1.5rem;
+}
+
+.status-content h4 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.status-content p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
 }
 
 .faq {
@@ -1085,10 +1214,19 @@ blockquote {
     background-color: var(--bg-light);
 }
 
+.contact .section-header {
+    animation: fadeInUp 1s ease;
+}
+
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 100%;
 }
 
 .contact-item {
@@ -1233,6 +1371,14 @@ blockquote {
 
 .footer-section p {
     color: var(--text-white);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.footer-section p i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
 }
 
 .footer-social {
@@ -1423,6 +1569,39 @@ blockquote {
         grid-template-columns: 1fr;
     }
 
+    .curriculum-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+
+    .curriculum-section h4 {
+        font-size: 1.2rem;
+    }
+
+    .application-info {
+        padding: 2rem;
+    }
+
+    .status-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .status-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .status-icon i {
+        font-size: 1.3rem;
+    }
+
+    .status-content h4 {
+        font-size: 1.1rem;
+    }
+
     /* Support */
     .support-options {
         grid-template-columns: 1fr;
@@ -1459,8 +1638,8 @@ blockquote {
 
     /* Contact */
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
     /* Footer */
@@ -1500,6 +1679,40 @@ blockquote {
 
     .amount-btn {
         width: 100%;
+    }
+
+    .curriculum-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .curriculum-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .application-info {
+        padding: 1.5rem;
+    }
+
+    .status-card {
+        padding: 1rem;
+    }
+
+    .status-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .status-icon i {
+        font-size: 1.1rem;
+    }
+
+    .status-content h4 {
+        font-size: 1rem;
+    }
+
+    .status-content p {
+        font-size: 0.9rem;
     }
 }
 
@@ -1552,7 +1765,8 @@ textarea:focus {
 /* ===== HOME PAGE STYLES ===== */
 .home-page {
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(rgba(38, 75, 31, 0.948), rgba(255, 255, 255, 0.726)),
+                url('../assets/hero-bg.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1663,6 +1877,10 @@ textarea:focus {
     background-color: var(--bg-white);
 }
 
+.achievements .section-header {
+    animation: fadeInUp 1s ease;
+}
+
 .achievement-stats {
     display: flex;
     justify-content: center;
@@ -1737,9 +1955,18 @@ textarea:focus {
     color: var(--primary-color);
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.5rem;
+}
+
+.student-hometown {
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
 }
 
 .student-story-text p {
@@ -1801,6 +2028,10 @@ textarea:focus {
 .founders {
     padding: 6rem 0;
     background-color: var(--bg-light);
+}
+
+.founders .section-header {
+    animation: fadeInUp 1s ease;
 }
 
 .founders-grid {
@@ -1925,6 +2156,10 @@ textarea:focus {
     align-items: center;
 }
 
+.about-hero .section-header {
+    animation: fadeInUp 1s ease;
+}
+
 .about-main-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1959,6 +2194,10 @@ textarea:focus {
 .programs {
     padding: 6rem 0;
     background-color: var(--bg-white);
+}
+
+.programs .section-header {
+    animation: fadeInUp 1s ease;
 }
 
 .programs-grid {

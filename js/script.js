@@ -93,16 +93,44 @@ function animateCounters() {
     
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
-        const increment = target / 100; // Adjust speed here
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const format = counter.getAttribute('data-format') || '';
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
         let current = 0;
         
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
-                counter.textContent = Math.floor(current);
+                let displayValue = Math.floor(current);
+                
+                // Format currency values
+                if (format === 'currency') {
+                    if (displayValue >= 1000000) {
+                        displayValue = (displayValue / 1000000).toFixed(2) + 'M';
+                    } else if (displayValue >= 1000) {
+                        displayValue = (displayValue / 1000).toFixed(0) + 'K';
+                    }
+                    counter.textContent = prefix + displayValue;
+                } else {
+                    counter.textContent = prefix + displayValue + suffix;
+                }
+                
                 requestAnimationFrame(updateCounter);
             } else {
-                counter.textContent = target;
+                // Final value
+                let finalValue = target;
+                if (format === 'currency') {
+                    if (finalValue >= 1000000) {
+                        finalValue = (finalValue / 1000000).toFixed(2) + 'M';
+                    } else if (finalValue >= 1000) {
+                        finalValue = (finalValue / 1000).toFixed(0) + 'K';
+                    }
+                    counter.textContent = prefix + finalValue;
+                } else {
+                    counter.textContent = prefix + finalValue + suffix;
+                }
             }
         };
         
@@ -120,8 +148,9 @@ const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             // Animate counters when they come into view
-            if (entry.target.classList.contains('hero-stats') || 
-                entry.target.classList.contains('impact-grid')) {
+            if (entry.target.classList.contains('hero-stats') ||
+                entry.target.classList.contains('impact-grid') ||
+                entry.target.classList.contains('achievement-stats')) {
                 animateCounters();
             }
             
@@ -135,7 +164,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe sections for animations
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');
-    const animatedElements = document.querySelectorAll('.hero-stats, .impact-grid, .program-grid, .scholar-grid, .team-grid');
+    const animatedElements = document.querySelectorAll('.hero-stats, .impact-grid, .program-grid, .scholar-grid, .team-grid, .achievement-stats, .about-main-content, .programs-grid, .founders-grid, .contact-content, .student-stories');
     
     // Set initial state for animated elements
     animatedElements.forEach(element => {
