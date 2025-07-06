@@ -1988,12 +1988,22 @@ textarea:focus {
         flex-direction: column !important;
         text-align: center;
         gap: 2rem;
+        align-items: center;
+    }
+    
+    .student-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
     
     .student-photo {
         width: 120px;
         height: 120px;
         margin: 0 auto;
+        display: block;
     }
     
     .university-name {
