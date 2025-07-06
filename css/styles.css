@@ -2170,6 +2170,72 @@ textarea:focus {
     animation: fadeInUp 1s ease;
 }
 
+/* Story Section */
+.story-section {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.story-content {
+    background-color: var(--bg-white);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.story-content:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.story-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.story-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Mission and Vision Grid */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 1rem;
+}
+
+.mission-vision-grid .about-item {
+    background-color: var(--bg-white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.mission-vision-grid .about-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.mission-vision-grid .about-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.mission-vision-grid .about-item p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Legacy support for existing about-main-content */
 .about-main-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2212,14 +2278,14 @@ textarea:focus {
 
 .programs-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .programs .program-card {
     background-color: var(--bg-light);
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     border-radius: var(--border-radius);
     text-align: center;
     transition: var(--transition);
@@ -2274,6 +2340,40 @@ textarea:focus {
     
     .programs .program-card {
         padding: 2.5rem 1.5rem;
+    }
+
+    /* New about page sections mobile styles */
+    .story-section {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .story-content {
+        padding: 2rem;
+    }
+
+    .story-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .story-content p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .mission-vision-grid .about-item {
+        padding: 2rem;
+    }
+
+    .mission-vision-grid .about-item h3 {
+        font-size: 1.3rem;
     }
 }
 
