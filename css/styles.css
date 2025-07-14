@@ -158,6 +158,16 @@ blockquote {
 .logo-img {
     height: 40px;
     width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img img {
+    height: 32px;
+    width: auto;
+    max-width: 32px;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -1335,8 +1345,10 @@ blockquote {
 }
 
 .footer-logo img {
-    height: 40px;
+    height: 32px;
     width: auto;
+    max-width: 32px;
+    object-fit: contain;
 }
 
 .footer-logo span {
@@ -1800,6 +1812,14 @@ textarea:focus {
     color: var(--text-white);
 }
 
+.home-logo-icon img {
+    height: 120px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    /* Remove the white filter so the logo shows properly */
+}
+
 .home-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -1835,6 +1855,11 @@ textarea:focus {
         font-size: 3rem;
     }
     
+    .home-logo-icon img {
+        height: 70px;
+        max-width: 70px;
+    }
+    
     .home-title {
         font-size: 2.8rem;
         margin-bottom: 1rem;
@@ -1859,6 +1884,11 @@ textarea:focus {
     
     .home-logo-icon i {
         font-size: 2.5rem;
+    }
+    
+    .home-logo-icon img {
+        height: 60px;
+        max-width: 60px;
     }
     
     .home-title {
