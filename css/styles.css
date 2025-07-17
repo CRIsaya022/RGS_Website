@@ -1807,17 +1807,33 @@ textarea:focus {
     animation: fadeInUp 1s ease;
 }
 
-.home-logo-icon i {
-    font-size: 3.5rem;
-    color: var(--text-white);
-}
-
 .home-logo-icon img {
-    height: 120px;
-    width: auto;
+    height: 120px;      /* 4px less than container */
     max-width: 120px;
+    width: auto;
     object-fit: contain;
-    /* Remove the white filter so the logo shows properly */
+}
+@media (max-width: 768px) {
+    .home-logo-icon {
+        background-color: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .home-logo-icon img {
+        height: 96px;   /* 4px less than container */
+        max-width: 96px;
+    }
+}
+@media (max-width: 480px) {
+    .home-logo-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .home-logo-icon img {
+        height: 76px;   /* 4px less than container */
+        max-width: 76px;
+    }
 }
 
 .home-title {
