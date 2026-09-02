@@ -2203,6 +2203,149 @@ textarea:focus {
     }
 }
 
+/* ===== COUNSELOR SECTION ===== */
+.counselor {
+    padding: 6rem 0;
+    background-color: var(--bg-light);
+}
+
+.counselor .section-header {
+    animation: fadeInUp 1s ease;
+}
+
+.counselor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 1.5rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.counselor-grid .founder-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.counselor-grid .founder-email {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.photo-zoom-out {
+    object-position: center 15%;
+}
+
+.counselor-grid .founder-name {
+    min-height: 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .counselor-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        gap: 2rem;
+    }
+
+    .counselor-grid .founder-name {
+        min-height: 2.9rem;
+    }
+}
+
+/* ===== PARTNERS & DONORS PAGE ===== */
+.partners {
+    padding: 6rem 0;
+    background-color: var(--bg-white);
+}
+
+.donors {
+    padding: 6rem 0;
+    background-color: var(--bg-light);
+}
+
+.partners .section-header,
+.donors .section-header {
+    animation: fadeInUp 1s ease;
+}
+
+.org-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.org-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.donors .org-card {
+    background-color: var(--bg-white);
+}
+
+.org-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.org-logo-box {
+    width: 100%;
+    height: 110px;
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.donors .org-logo-box {
+    background-color: var(--bg-light);
+}
+
+.org-logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.org-name {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.org-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .org-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+}
+
 /* ===== ABOUT PAGE REDESIGN STYLES ===== */
 .about-hero {
     min-height: 100vh;
