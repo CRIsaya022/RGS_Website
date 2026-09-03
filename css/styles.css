@@ -2218,7 +2218,7 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr);
     align-items: stretch;
     gap: 1.5rem;
-    max-width: 650px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
